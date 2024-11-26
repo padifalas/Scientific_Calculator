@@ -74,7 +74,7 @@ function handlePercent() {
     }
 }
 
-// Store the operator and prepare for the next input
+
 function handleOperator(action) {
     if (currentInput) {
         if (previousInput && operator) {
@@ -90,22 +90,22 @@ function handleOperator(action) {
 
 function calculateResult() {
     if (operator && previousInput && currentInput) {
-        const operand1 = parseFloat(previousInput);
-        const operand2 = parseFloat(currentInput);
+        const a = parseFloat(previousInput);
+        const b = parseFloat(currentInput);
         let result;
 
         switch (operator) {
             case "add":
-                result = operand1 + operand2;
+                result = a + b;
                 break;
             case "subtract":
-                result = operand1 - operand2;
+                result = a - b;
                 break;
             case "multiply":
-                result = operand1 * operand2;
+                result = a * b;
                 break;
             case "divide":
-                result = operand2 !== 0 ? operand1 / operand2 : "Error";
+                result = b !== 0 ? a / b : "Error";
                 break;
             default:
                 result = "Error";  
